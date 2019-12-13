@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <link rel="stylesheet" href="css/entityStyles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div>
+    <div id="allEntities"></div>
+</div>
+
+<script id="entityElement" type="text/template">
+    <div class="box-size flex-container">
+        <div class="row">
+            <div class="col-sm-3">
+                <span class="blue-box"><%= entityType %></span>
+            </div>
+            <div class="col-sm-3 entity-name"><%= entityName %></div>
+            <div class="col-sm-3">
+                <div class="connected">
+                    <span class="dot-empty"></span>
+                    <%if(isConnected){ %>
+                    <span class="dot-green" style="margin-top: 3px"> </span>
+                    <%}else{%>
+                    <span class="dot-red" style="margin-top: 3px"> </span>
+                    <%}%>
+                    <span class="dot-empty"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <span class="rounded-square"><%= count %></span>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="js/libs/jquery.js"></script>
+<script src="js/libs/underscore.js"></script>
+<script src="js/libs/backbone.js"></script>
+<script src="js/models/singleEntityModel.js"></script>
+<script src="js/views/singleEntityView.js"></script>
+<script src="js/views/allEntitiesView.js"></script>
+<script src="js/collections/allEntities.js"></script>
+<script src="js/routes/router.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
